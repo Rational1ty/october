@@ -1,0 +1,88 @@
+:root {
+	--dark-gray: #0a0a0a;
+	/* --max-disp-x: -1920px; */
+	/* --max-disp-y: -1080px; */
+}
+
+html, body {
+	/* width: 200vw; */
+	/* height: 200vh; */
+	margin: 0;
+	padding: 0;
+	background-color: var(--dark-gray);
+	overflow: hidden;
+}
+
+.bg {
+	position: relative;
+	/* top: var(--max-disp-y); */
+	/* left: var(--max-disp-x); */
+	transform: translate(-50%, -50%);
+	width: 3840px;
+	height: 2160px;
+
+	animation: 10s linear infinite running bg-move;
+}
+
+/* @keyframes bg-move {
+	from {
+		top: var(--max-disp-y);
+		left: var(--max-disp-x);
+	}
+	to {
+		top: 0;
+		left: 0;
+	}
+} */
+
+@keyframes bg-move {
+	from { transform: translate(-50%, -50%); }
+	to { transform: translate(0, 0); }
+}
+
+.bg__img {
+	position: relative;
+	float: left;
+	opacity: 10%;
+}
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.container__date {
+	color: white;
+	font-size: 60pt;
+	font-family: system-ui, -apple-system, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container__img {
+	filter: hue-rotate(0deg);
+	animation: 5s linear 0s infinite running grad;
+}
+
+@keyframes grad {
+	from { filter: hue-rotate(0deg); }
+	to { filter: hue-rotate(360deg); }
+}
+
+.audio {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 25px;
+}
+
+.audio__toggle {
+	width: 25px;
+	cursor: pointer;
+}
