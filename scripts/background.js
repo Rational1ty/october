@@ -15,8 +15,7 @@ function $(id) {
 $('audio-toggle').addEventListener('click', e => toggleAudio(e.target));
 
 window.addEventListener('load', () => {
-	const music = $('music');
-	music.volume = 0.2;
+	$('music').volume = 0.5;
 });
 
 function toggleAudio(element) {

@@ -48,7 +48,7 @@ html, body {
 
 .container {
 	position: absolute;
-	top: 0;
+	top: -20vh;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
@@ -67,12 +67,22 @@ html, body {
 
 .container__img {
 	filter: hue-rotate(0deg);
-	animation: 5s linear 0s infinite running grad;
+	animation: 5s linear 0s infinite running rgb;
 }
 
-@keyframes grad {
+@keyframes rgb {
 	from { filter: hue-rotate(0deg); }
 	to { filter: hue-rotate(360deg); }
+}
+
+.search {
+	position: absolute;
+	color: white;
+	width: 100vw;
+	height: 50px;
+	top: 0;
+	left: 0;
+	border: thin solid red;
 }
 
 .audio {
