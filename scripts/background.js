@@ -9,6 +9,10 @@ window.addEventListener('resize', () => {
 $('audio-toggle').addEventListener('click', e => toggleAudio(e.target));
 
 window.addEventListener('load', () => {
+	if ('scrollRestoration' in window.history) {
+		window.history.scrollRestoration = 'manual';
+	}
+	window.scroll(0, 0);
 	$('music').volume = 0.2;
 });
 
