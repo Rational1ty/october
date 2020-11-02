@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./styles/style.css"/>
 		<script defer src="./scripts/main.js"></script>
 		<script defer src="./scripts/background.js"></script>
+		<script defer src="./scripts/search.js"></script>
 	</head>
 	<body>
 		<noscript>You must enable JavaScript to run this page</noscript>
@@ -18,16 +19,20 @@
 			<img src="./assets/shapes-med.jpg" class="bg__img"/>
 		</div>
 		<div class="container">
-			<img src="./assets/dootdoot1.gif" alt="Skeleton playing trumpet" class="container__img"/>
-			<h1 class="container__date" id="date"></h1>
-			<img src="./assets/dootdoot2.gif" alt="Skeleton playing trumpet" class="container__img"/>
-		</div>
-		<div class="search">
-			<div class="search__bar"></div>
-		</div>
-		<div class="audio">
-			<img src="./assets/music-note-disabled.png" alt="Toggle audio" class="audio__toggle" id="audio-toggle"/>
-			<audio src="./assets/sss-remix.mp3" id="music" style="display: none" loop></audio>
+			<div class="content">
+				<img src="./assets/dootdoot1.gif" alt="Skeleton playing trumpet" class="content__img"/>
+				<div class="content__center">
+					<h1 class="content__date" id="date"></h1>
+					<div class="content__bar">
+						<input class="content__search" id="search" type="text" placeholder="Search"></input>
+					</div>
+				</div>
+				<img src="./assets/dootdoot2.gif" alt="Skeleton playing trumpet" class="content__img"/>
+			</div>
+			<div class="audio">
+				<img src="./assets/music-note-disabled.png" alt="Toggle audio" class="audio__toggle" id="audio-toggle"/>
+				<audio src="./assets/sss-remix.mp3" id="music" style="display: none" loop></audio>
+			</div>
 		</div>
 	</body>
 </html>
