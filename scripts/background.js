@@ -2,11 +2,9 @@ function $(id) {
 	return document.getElementById(id);
 }
 
-window.addEventListener('resize', () => {
-	console.log(window.visualViewport.width, window.visualViewport.height);
-});
-
-$('audio-toggle').addEventListener('click', e => toggleAudio(e.target));
+// window.addEventListener('resize', () => {
+// 	console.log(window.visualViewport.width, window.visualViewport.height);
+// });
 
 window.addEventListener('load', () => {
 	if ('scrollRestoration' in window.history) {
@@ -15,6 +13,8 @@ window.addEventListener('load', () => {
 	window.scroll(0, 0);
 	$('music').volume = 0.2;
 });
+
+$('audio-toggle').addEventListener('click', e => toggleAudio(e.target));
 
 function toggleAudio(element) {
 	if (element.getAttribute('src') === './assets/music-note.png') {

@@ -24,13 +24,14 @@
 				<div class="content__center">
 					<h1 class="date" id="date"></h1>
 					<div class="search">
-						<input class="search__bar" id="search" type="text" placeholder="Search"></input>
-						<img src="./assets/search.png" alt="Search" class="search__img"/>
+						<input class="search__bar" id="search-field" type="text" placeholder="Search"></input>
+						<img src="./assets/search.png" alt="Search" class="search__img" id="search-submit"/>
 					</div>
 				</div>
 				<img src="./assets/dootdoot2.gif" alt="Skeleton playing trumpet" class="content__img"/>
 			</div>
 			<div class="audio">
+				<canvas class="audio__vol"></canvas>
 				<img src="./assets/music-note-disabled.png" alt="Toggle audio" class="audio__toggle" id="audio-toggle"/>
 				<audio src="./assets/sss-remix.mp3" id="music" style="display: none" loop></audio>
 			</div>
