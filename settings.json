@@ -1,0 +1,7 @@
+// User settings
+{
+	"audio": {
+		"autoPlay": false,
+		"volume": 20
+	}
+}
