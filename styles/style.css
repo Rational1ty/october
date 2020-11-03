@@ -115,6 +115,13 @@ html, body {
 	margin: 25px;
 }
 
+.audio__control {
+	width: auto;
+	height: inherit;
+	/* margin: 0 3px; */
+	display: inline-block;
+}
+
 .audio__slider {
 	display: none;
 	width: 120px;
@@ -124,5 +131,4 @@ html, body {
 .audio__img {
 	height: inherit;
 	cursor: pointer;
-	margin: 0 3px;
 }

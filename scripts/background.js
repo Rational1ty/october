@@ -25,3 +25,11 @@ function toggleAudio(element) {
 		$('music').play();
 	}
 }
+
+$('volume-control').addEventListener('mouseenter', () => {
+	$('audio-slider').style.setProperty('display', 'initial');
+});
+
+$('volume-control').addEventListener('mouseleave', () => {
+	$('audio-slider').style.setProperty('display', 'none');
+});
