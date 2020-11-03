@@ -118,7 +118,6 @@ html, body {
 .audio__control {
 	width: auto;
 	height: inherit;
-	/* margin: 0 3px; */
 	display: inline-block;
 }
 
@@ -126,6 +125,7 @@ html, body {
 	display: none;
 	width: 120px;
 	height: inherit;
+	cursor: pointer;
 }
 
 .audio__img {
