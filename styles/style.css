@@ -16,7 +16,7 @@ html, body {
 	width: 3840px;
 	height: 2160px;
 
-	animation: 20s linear infinite running bg-move;
+	animation: 45s linear infinite running bg-move;
 }
 
 @keyframes bg-move {
@@ -50,7 +50,7 @@ html, body {
 }
 
 .content__img {
-	filter: hue-rotate(0deg);
+	object-fit: contain;
 	animation: 5s linear 0s infinite running rgb;
 }
 
@@ -111,10 +111,18 @@ html, body {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	height: 30px;
 	margin: 25px;
 }
 
-.audio__toggle {
-	width: 25px;
+.audio__slider {
+	display: none;
+	width: 120px;
+	height: inherit;
+}
+
+.audio__img {
+	height: inherit;
 	cursor: pointer;
+	margin: 0 3px;
 }

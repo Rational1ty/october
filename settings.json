@@ -3,5 +3,11 @@
 	"audio": {
 		"autoPlay": false,
 		"volume": 20
+	},
+	"visuals": {
+		"backgroundShapePattern": true,
+		"backgroundAnimation": true,
+		"backgroundAnimationLoopTime": 45,
+		"imageAnimation": true
 	}
 }
