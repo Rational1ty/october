@@ -92,7 +92,7 @@ audioSlider.addEventListener('mouseup', () => {
 
 function adjustVolume(e) {
 	const x = 
-		e.offsetX < min ? min :
+		e.offsetX < min ? min : 
 		e.offsetX > max ? max : 
 		e.offsetX;
 
