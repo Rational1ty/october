@@ -113,6 +113,7 @@ html, body {
 	right: 0;
 	height: 30px;
 	margin: 25px;
+	user-select: none;
 }
 
 .audio__control {
@@ -123,7 +124,7 @@ html, body {
 
 .audio__slider {
 	display: none;
-	width: 100px;
+	width: 120px;
 	height: inherit;
 	cursor: pointer;
 }
