@@ -10,6 +10,6 @@ $('search-field').addEventListener('keydown', e => {
 $('search-submit').addEventListener('click', submitSearch);
 
 function submitSearch() {
-	const query = $('search-field').value.replace(/\s+/g, '+').replace(/\?+/g, '');
+	const query = $('search-field').value.replace(/\s+/g, '+').replace(/[\?&=]+/g, '');
 	window.location.replace(`https://www.google.com/search?q=${query}`);
 }
