@@ -27,7 +27,7 @@ html, body {
 .bg__img {
 	position: relative;
 	float: left;
-	opacity: 25%;
+	opacity: 0.25;
 }
 
 .container {

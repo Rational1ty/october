@@ -39,9 +39,9 @@ if ('scrollRestoration' in window.history) {
 window.scroll(0, 0);
 
 if (localStorageAvailable) {
-	music.volume = Number.parseFloat( window.localStorage.getItem('volume') ?? 0.5 );
+	music.volume = Number.parseFloat( window.localStorage.getItem('volume') ?? 0.1 );
 } else {
-	music.volume = 0.5;
+	music.volume = 0.1;
 }
 
 updateAudioVolumeIcon();
