@@ -3,7 +3,7 @@ function $(id) {
 }
 
 // Get element references
-const audioToggle = $('audio-toggle')
+// const audioToggle = $('audio-toggle');
 const volumeControl = $('volume-control');
 const audioVolume = $('audio-volume');
 const audioSlider = $('audio-slider');
@@ -32,6 +32,9 @@ const localStorageAvailable = (function() {
 	return true;
 })();
 
+const defaultVolume = 0.1;
+
+
 // Set viewport scroll to top- and left-most position
 if ('scrollRestoration' in window.history) {
 	window.history.scrollRestoration = 'manual';
@@ -39,11 +42,12 @@ if ('scrollRestoration' in window.history) {
 window.scroll(0, 0);
 
 if (localStorageAvailable) {
-	music.volume = Number.parseFloat( window.localStorage.getItem('volume') ?? 0.1 );
+	music.volume = Number.parseFloat( window.localStorage.getItem('volume') ?? defaultVolume + '' );
 } else {
-	music.volume = 0.1;
+	music.volume = defaultVolume;
 }
 
+updateAudioPlayState();
 updateAudioVolumeIcon();
 
 window.addEventListener('beforeunload', () => {
@@ -54,14 +58,37 @@ window.addEventListener('beforeunload', () => {
 	window.localStorage.setItem('volume', music.volume);
 });
 
-audioToggle.addEventListener('click', e => {
-	const el = e.target;
-	if (el.getAttribute('src') === './assets/music-note.png') {
-		el.setAttribute('src', './assets/music-note-disabled.png');
+// audioToggle.addEventListener('click', e => {
+// 	const el = e.target;
+// 	if (el.getAttribute('src') === './assets/music-note.png') {
+// 		el.setAttribute('src', './assets/music-note-disabled.png');
+// 		music.pause();
+// 	} else {
+// 		el.setAttribute('src', './assets/music-note.png');
+// 		music.play();
+// 	}
+// });
+
+audioVolume.addEventListener('click', () => {
+	if (music.volume !== 0) {
+		if (localStorageAvailable) {
+			window.localStorage.setItem('volume', music.volume);
+		}
+
+		music.volume = 0;
 		music.pause();
+		drawVolumeBar();
+		audioVolume.setAttribute('src', './assets/volume-mute.png');
 	} else {
-		el.setAttribute('src', './assets/music-note.png');
+		if (localStorageAvailable) {
+			music.volume = Number.parseFloat( window.localStorage.getItem('volume') ?? defaultVolume + '' );
+		} else {
+			music.volume = defaultVolume;
+		}
+
 		music.play();
+		drawVolumeBar();
+		updateAudioVolumeIcon();
 	}
 });
 
@@ -77,13 +104,15 @@ volumeControl.addEventListener('mouseleave', () => {
 // Audio slider only
 audioSlider.addEventListener('mousedown', e => {
 	adjustVolume(e);
-	updateAudioVolumeIcon();
 	drawVolumeBar();
+	updateAudioPlayState();
+	updateAudioVolumeIcon();
 
 	audioSlider.onmousemove = ev => {
 		adjustVolume(ev);
-		updateAudioVolumeIcon();
 		drawVolumeBar();
+		updateAudioPlayState();
+		updateAudioVolumeIcon();
 	};
 });
 audioSlider.addEventListener('mouseup', () => {
@@ -97,6 +126,14 @@ function adjustVolume(e) {
 		e.offsetX;
 
 	music.volume = (x - min) / 100;
+}
+
+function updateAudioPlayState() {
+	if (music.volume === 0) {
+		music.pause();
+	} else {
+		music.play();
+	}
 }
 
 function updateAudioVolumeIcon() {
