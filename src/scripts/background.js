@@ -58,17 +58,6 @@ window.addEventListener('beforeunload', () => {
 	window.localStorage.setItem('volume', music.volume);
 });
 
-// audioToggle.addEventListener('click', e => {
-// 	const el = e.target;
-// 	if (el.getAttribute('src') === './assets/music-note.png') {
-// 		el.setAttribute('src', './assets/music-note-disabled.png');
-// 		music.pause();
-// 	} else {
-// 		el.setAttribute('src', './assets/music-note.png');
-// 		music.play();
-// 	}
-// });
-
 audioVolume.addEventListener('click', () => {
 	if (music.volume !== 0) {
 		if (localStorageAvailable) {
